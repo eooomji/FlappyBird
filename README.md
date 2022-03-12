@@ -1,2 +1,3 @@
 # FlappyBird
-연습용 : Flappy Bird Game Clone Coding using Unity
+
+💛 Unity를 이용한 게임 만들기 연습용 <1>
