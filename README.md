@@ -2,6 +2,12 @@
 
 💛 Unity를 이용한 게임 만들기 연습용 <1>  
 
+📌 추가로 해볼 것 (생각나는 즉시 적어보자)  
+1. 마우스 왼쪽 버튼 클릭이 아닌, 스페이스바로 점프하기  
+2. Speed도 고정하지말고, 랜덤으로 변화해주기  
+3. 새가 하늘 뚫지 않게 설정  
+4. Game Logic 바꿔보기  
+
 📌 정리  
 💡 Debug.Log(변수명);  
 C의 printf, JS의 console.log()와 같이, Unity 콘솔창에 찍을 때 사용  
@@ -20,4 +26,20 @@ ex) 6FPS에는 * 1/6, 3FPS에는 * 1/3
 ++) Hierarchy 안의 최초로 만든 Frefab을 지워도, 에셋에 남아있어 영구 사용 가능  
 🚨 그럼 Generator는 어떻게 만드나요❓   
 => 빈 Object file을 생성하고, Script에서 생성하도록 만들어줌  
-1:21:35
+🚨 본 Frefab의 속성으로, 만들어지는 Frefab에도 반영은 어떻게 하나요❓   
+=> Inspector -> Overrides - > Apply All  💧 난 왜 안 뜨지...?ㅎㅎ;;  
+- Collider (Collider(ex, Box - Capsule)끼리 충돌 할 때)  
+ 1) Collision (기본) : 벽으로 인식  
+ 2) Trigger : 관통 가능  
+ => 충돌 시 : OnCollision or OnTrigge(-Enter, -Exit)  
+
+💡 Class   
+- Random.Range(a.0f, b.0f) : a.0f ~ b.0f 범위 중 랜덤으로 할당  
+
+💡 UI 요소 (text, button 등)  
+- 바로 GameObject를 생성하는 것이 아닌, 부모 오브젝트로 canvas를 만들고, 그 안에 UI 요소를 넣어줌  
+- Inspector -> Canvas -> Render Mode "Screen Space - Overlay"  
+  : 스마트폰의 사이즈에 따라 화면 크기가 다른데, Screen Space - Overlay로 설정해주면 어느 화면에 맞추지 않고, 꽉 채움!  
+- Text -> Inspector -> Rect Transform  
+  : 화면 크기에 상관없이, 특정 점(Anchor)을 기준으로 위치를 지정하는 것  
+  : Anchor (min(0,0), max(1, 1))로 설정
